@@ -1,2 +1,2 @@
 #!/usr/bin/python3
-print("\"programming is like building a mutilingual puzzle")
+print("\"Programming is like building a mutilingual puzzle")
