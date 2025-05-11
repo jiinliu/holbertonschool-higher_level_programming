@@ -4,10 +4,11 @@ import sys
 def main():
     args = sys.argv[1:]
     count = len(args)
+
     if count == 0:
         print(f"{count} arguments.")
     elif count == 1:
-            print(f"{count} argumment:")
+        print(f"{count} argument:")
     else:
         print(f"{count} arguments:")
 
