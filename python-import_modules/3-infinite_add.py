@@ -3,7 +3,7 @@ import sys
 
 
 def main():
-    total = sum (int(arg) for arg in sys.argv[1:])
+    total = sum(int(arg) for arg in sys.argv[1:])
     print(total)
 
 
