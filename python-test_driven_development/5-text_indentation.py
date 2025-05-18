@@ -7,23 +7,23 @@ indentation rules.
 
 def text_indentation(text):
     """
-    Prints a text with two new lines after each of these
-    characters: ., ? and :.
+    Prints a text with 2 new lines after each '.', '?', and ':' character.
 
     Args:
-        text (str): The text to be printed.
+        text (str): The input text.
 
     Raises:
         TypeError: If text is not a string.
     """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
-
-    i = 0
-    while i < len(text):
-        print(text[i], end="")
-        if text[i] in ".?:":
-            print("\n")
-            while i + 1 < len(text) and text[i + 1] == " ":
-                i += 1
-        i += 1
+    split_chars = ('.', '?', ':')
+    line = ""
+    for char in text:
+        line += char
+        if char in split_chars:
+            print(line.strip())
+            print()
+            line = ""
+    if line.strip():  # Print the last piece if not empty
+        print(line.strip())
