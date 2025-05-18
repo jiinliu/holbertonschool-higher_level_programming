@@ -1,9 +1,6 @@
 The ``add_integer`` module
 ==========================
 
-This module provides a function that adds two integers or floats (which will be cast to integers).
-It validates inputs and raises a TypeError if arguments are not integer or float.
-
 Using ``add_integer``
 ---------------------
 
@@ -87,4 +84,3 @@ Test - missing both arguments
     Traceback (most recent call last):
     ...
     TypeError: add_integer() missing 1 required positional argument: 'a'
-    
