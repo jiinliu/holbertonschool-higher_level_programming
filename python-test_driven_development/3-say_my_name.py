@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-This module rovides a function to print a formatted name with given first and last names.
+This module rovides a function to print a formatted name with 
+given first and last names.
 """
 
 
