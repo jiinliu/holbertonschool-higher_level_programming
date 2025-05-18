@@ -1,12 +1,14 @@
 #!/usr/bin/python3
 """
-This module provides a function to print text with specific indentation rules.
+This module provides a function to print text with specific
+indentation rules.
 """
 
 
 def text_indentation(text):
     """
-    Prints a text with two new lines after each of these characters: ., ? and :.
+    Prints a text with two new lines after each of these
+    characters: ., ? and :.
 
     Args:
         text (str): The text to be printed.
