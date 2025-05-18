@@ -1,40 +1,51 @@
->>> text_indentation = __import__('5-text_indentation').text_indentation
->>> text_indentation("Hello. How are you? I am fine: Thanks.")
-Hello.
+The ``text_indentation`` module
+===============================
 
-How are you?
+Using ``text_indentation``
+---------------------------
 
-I am fine:
+First import ``text_indentation`` from the ``5-text_indentation`` file:
 
-Thanks.
->>> text_indentation(" This is a test.  ")
-This is a test.
->>> text_indentation("")
->>> text_indentation(123)
-Traceback (most recent call last):
-...
-TypeError: text must be a string
->>> text_indentation("A: B.C?D.")
-A:
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-B.
+Test - typical case with punctuation and spacing:
+    >>> text_indentation("Hello.   How are you? Fine:   then go.")
+    Hello.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+    Fine:
+    <BLANKLINE>
+    then go.
+    <BLANKLINE>
 
-C?
+Test - with no ".", "?" and ":":
+    >>> text_indentation("This is a test with no punctuation")
+    This is a test with no punctuation
 
-D.
->>> text_indentation("No special chars here")
-No special chars here
->>> text_indentation("First:   Second?  Third.   Last")
-First:
+Test - leading and trailing spaces:
+    >>> text_indentation("   Hi there.  What's up?   ")
+    Hi there.
+    <BLANKLINE>
+    What's up?
+    <BLANKLINE>
 
-Second?
+Test - multiple punctuation without space:
+    >>> text_indentation("One.Two?Three:Four.")
+    One.
+    <BLANKLINE>
+    Two?
+    <BLANKLINE>
+    Three:
+    <BLANKLINE>
+    Four.
+    <BLANKLINE>
 
-Third.
+Test - not a string:
+    >>> text_indentation(42)
+    Traceback (most recent call last):
+    ...
+    TypeError: text must be a string
 
-Last
->>> text_indentation("   .   ?   :   ")
-.
-
-?
-
-:
+Test - empty string:
+    >>> text_indentation("")    # no output
