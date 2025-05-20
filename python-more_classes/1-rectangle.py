@@ -8,7 +8,13 @@ class Rectangle:
     """
     Class for Rectangle.
     """
-    def __init__(self, size=0):
+    def __init__(self, width=0, height=0):
+        if width < 0:
+            raise ValueError("width must be >= 0")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        self.width = width
+        self. height = height
         """Initialize a new Rectangle instance.
 
         This constructor validates and sets the size of the square.
@@ -63,5 +69,3 @@ def height(self, value):
             int: The area of the Rectangle.
         """
         return self.__width * self.__height
-
-
