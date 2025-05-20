@@ -9,20 +9,14 @@ class Rectangle:
     Class for Rectangle.
     """
     def __init__(self, width=0, height=0):
-        if width < 0:
-            raise ValueError("width must be >= 0")
-        if height < 0:
-            raise ValueError("height must be >= 0")
-        self.width = width
-        self. height = height
         """Initialize a new Rectangle instance.
 
-        This constructor validates and sets the size of the square.
-
         Args:
-            size (int, optional): The size of the Rectangle. Defaults to 0.
+            width (int, optional): The width of the Rectangle. Defaults to 0.
+            height (int, optional): The height of the Rectangle. Defaults to 0.
         """
-        self.size = size
+        self.width = width
+        self.height = height
 
     @property
     def width(self):
@@ -61,25 +55,12 @@ class Rectangle:
         Set the height of the Rectangle.
 
         Args:
-            value (int): The new size of the Rectangle.
-
-        Raises:
-            TypeError: If value is not an integer.
-            ValueError: If value is less than 0.
+    @height.setter
+    def height(self, value):
         """
-    if not isinstance(value, int):
-        raise TypeError("height must be an integer")
-    if value < 0:
-        raise ValueError("height must be >= 0")
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
         self.__height = value
 
-    
-    
-    def area(self):
-        """
-        Calculate the area of the Rectangle.
-
-        Returns:
-            int: The area of the Rectangle.
-        """
-        return self.__width * self.__height
