@@ -1,7 +1,9 @@
 #!/usr/bin/python3
 """
-This module provides a function to list available attributes and metods of an abject.
+This module provides a function to listavailable attributes and metods of an abject.
 """
+
+
 def lookup(obj):
     """
     Returns a list of available attributes and methobds of an object.
