@@ -14,4 +14,4 @@ def print_sorted(self):
     """
     Prints the list in sorted order.
     """
-    print(sorted(delf))
+    print(sorted(self))
