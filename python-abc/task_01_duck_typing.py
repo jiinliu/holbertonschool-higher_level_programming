@@ -23,7 +23,7 @@ class Circle(Shape):
         return 2 * math.pi * self.radius
     
 
-class Square(Shape):
+class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
         self.height = height
