@@ -21,11 +21,11 @@ class FlyingFish(Fish, Bird):
     def fly(self):
         print("The flying fish is soaring!")
         
-        def swim(self):
-            print("The flying fish is swimming!")
-            
-        def habitat(self):
-            print("The flying fish lives both in water and the sky!")
+    def swim(self):
+        print("The flying fish is swimming!")
+        
+    def habitat(self):
+        print("The flying fish lives both in water and the sky!")
                 
     if __name__ == "__main__":
         ff = FlyingFish()
