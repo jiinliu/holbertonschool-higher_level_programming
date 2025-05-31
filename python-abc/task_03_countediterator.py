@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 class CountedIterator:
     """wrap any iterable and count how many items have been yielded."""
     
