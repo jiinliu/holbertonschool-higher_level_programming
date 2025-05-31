@@ -2,16 +2,16 @@
 class VerboseList(list):
  """A short, chatty list."""
  
- 
+
  def apppend(self, item):
      super().append(item)
-     print(f"Added [{itrem}] to the list.")
+     print(f"Added [{item}] to the list.")
      
      
      def extend(self, iterable):
          items = list(iterable)
          super().extend(items)
-         print(f"Extended the list with [{len(items}] items.")
+         print(f"Extended the list with [{len(items)}] items.")
          
          
          def remove(self, item):
