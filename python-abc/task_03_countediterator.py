@@ -1,4 +1,7 @@
 class CountedIterator:
+    """wrap any iterable and count how many items have been yielded."""
+    
+
     def __init__(self, iterable):
         self._iter = iter(iterable)
         self._count = 0
