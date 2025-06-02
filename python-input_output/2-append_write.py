@@ -1,9 +1,9 @@
-#!/usr/bin/python3
-"""Defines a function that reads a text file
-and appends a sting at the end of the file."""
+"""Module that appends a string to a text file (UTF8) and returns the number of characters added.
+"""
 
 
 def append_write(filename="", text=""):
-    """Appends a sting at the end of a text file (UTF8)"""
-    with open (filename, "a", encoding="utf-8") as f:
+    """Appends a string to a text file (UTF8) and returns the number of characters added.
+    """
+    with open(filename, "a", encoding="utf-8") as f:
         return f.write(text)
