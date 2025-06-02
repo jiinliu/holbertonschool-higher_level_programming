@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Module that returns the representation of an object as a string."""
 import json
 
 
