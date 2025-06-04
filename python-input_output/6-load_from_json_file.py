@@ -4,7 +4,7 @@ import json
 
 
 def load_from_json_file(filename):
-    """Creates an object from a JSON file.
+    """Creates an object from a JSON file.”””
    
     Args:
         filename : The name of the file to read feom."""
