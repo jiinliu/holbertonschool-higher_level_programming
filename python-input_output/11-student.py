@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """This module defines a Student class for serialization"""
+
+
 class Student:
     """Defines a student by first_name, last_neme, and age."""
     
@@ -18,8 +20,7 @@ class Student:
             return {attr: getattr(self, attr)
                     for attr in attrs if hasattr(self, attr)}
 
-    def relod_from_json(self, json):
+    def reload_from_json(self, json):
         """Replace attributes from a dictionary"""
         for key, value in json:
             setattr(self, key, value)
-        
