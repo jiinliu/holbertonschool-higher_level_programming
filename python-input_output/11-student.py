@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""This module defines a Student class for serialization"""
 class Student:
     """Defines a student by first_name, last_neme, and age."""
     
