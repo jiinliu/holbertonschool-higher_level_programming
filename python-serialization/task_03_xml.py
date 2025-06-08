@@ -37,8 +37,10 @@ def deserialize_from_xml(filename):
         root = tree.getroot()
         data = {}
         
-        for child in root:
-            data[child.tag] = child.text
+        for item in root.findall("item"):
+            key = item.get("key")
+            value = item.text
+            data[key] = value
         
         return data
     except (FileNotFoundError, ET.ParseError):
