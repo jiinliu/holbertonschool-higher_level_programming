@@ -18,7 +18,16 @@ class CustomObject:
         self.name = name
         self.age = age
         self.is_student = is_student
-    
+        
+    def display(self):
+        """
+        Display the object's attributes.
+        
+        Return:
+            str: information.
+        """
+        return f"Name: {self.name}, Age: {self.age}, Is Student: {self.is_student}"
+
     def serialize(self, filename):
         """
         Serialize the CustomObject instance to a file.
