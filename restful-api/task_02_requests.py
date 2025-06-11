@@ -6,14 +6,13 @@ import requests
 import csv
 
 
-
 def fetch_and_print_posts():
     """
     Fetch posts from JSONPlaceholder and print titles
     """
     response = requests.get('https://jsonplaceholder.typicode.com/posts')
     
-    print("Status Code: ",response.status_code)
+    print("Status Code:",response.status_code)
     if response.status_code == 200:
         posts = response.json()
         for i in posts:
