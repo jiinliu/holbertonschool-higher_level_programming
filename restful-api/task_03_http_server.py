@@ -1,35 +1,38 @@
 #!/usr/bin/python3
-"""Module to set up a simple HTTP server."""
-import http.server
+from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
-class SimpleHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
+class SimpleAPIHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         if self.path == "/":
             self.send_response(200)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
-        elif self.path == "/api/data":
+        elif self.path == "/data":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-type", "application/json")
             self.end_headers()
             data = {"name": "John", "age": 30, "city": "New York"}
             self.wfile.write(json.dumps(data).encode())
         elif self.path == "/status":
             self.send_response(200)
-            self.send_header("Content-Type", "application/json")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            info = {"Version": "1.0", "description": "a simple HTTP server"}
-            self.wfile.write(json.dumps(info).encode())
+            self.wfile.write(b"OK")
         else:
             self.send_response(404)
-            self.send_header("Content-Type", "text/plain")
+            self.send_header("Content-type", "text/plain")
             self.end_headers()
-            self.wfile.write(b"404 Not Found")
+            self.wfile.write(b"Endpoint not found")
 
 if __name__ == "__main__":
     server_address = ('', 8000)
-    httpd = http.server.HTTPServer(server_address, SimpleHTTPRequestHandler)
-    print("Starting server on port 8000...")
-    httpd.serve_forever()
+    httpd = HTTPServer(server_address, SimpleAPIHandler)
+    print("Serving on port 8000...")
+    try:
+        httpd.serve_forever()
+    except KeyboardInterrupt:
+        print("\nShutting down the server...")
+        httpd.server_close()
+        print("Server successfully shut down.")
