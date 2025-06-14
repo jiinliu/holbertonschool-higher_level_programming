@@ -17,7 +17,7 @@ def data():
 def status():
     return "OK"
 
-@app.route('/user/<username>')
+@app.route('/users/<username>')
 def user(username):
     if username in users:
         return jsonify(users[username])
