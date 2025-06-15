@@ -43,12 +43,12 @@ def login():
         return jsonify({"error": "Invalid credentials"}), 401
 
     access_token = create_access_token(identity={"username": username, "role": user["role"]})
-    return "JWT Auth: Access Granted"
+    return jsonify({"access_token": access_token}), 200
 
 @app.route('/jwt-protected', methods=['GET'])
 @jwt_required()
 def jwt_protected():
-    return jsonify(message="JWT Auth: Access Granted"), 200
+    return "JWT Auth: Access Granted"
 
 @app.route('/admin-only', methods=['GET'])
 @jwt_required()
