@@ -7,7 +7,6 @@ from flask_jwt_extended import (
     jwt_required, get_jwt_identity
 )
 from werkzeug.security import generate_password_hash, check_password_hash
-from datetime import timedelta
 
 app = Flask(__name__)
 auth = HTTPBasicAuth()
@@ -30,7 +29,7 @@ def verify_password(username, password):
 @app.route('/basic-protected', methods=['GET'])
 @auth.login_required
 def basic_protected():
-    return jsonify(message="Basic Auth: Access Granted"), 200
+    return "Basic Auth: Access Granted"
 
 
 @app.route('/login', methods=['POST'])
