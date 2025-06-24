@@ -1,2 +1,2 @@
--- Delete a database
+-- List tables
 SHOW TABLES;

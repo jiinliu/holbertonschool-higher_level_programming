@@ -1,2 +1,2 @@
--- Delete a database
+-- Full description
 SHOW CREATE TABLE first_table;
