@@ -1,6 +1,6 @@
 -- Cities of California
 SELECT id, name
-FROM Cities
+FROM cities
 WHERE state_id = (
     SELECT id FROM states WHERE name = 'California'
 )
