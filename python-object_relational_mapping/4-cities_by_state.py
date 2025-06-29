@@ -1,15 +1,11 @@
 #!/usr/bin/python3
-""" takes in an argument and displays all values in the states table 
-    of hbtn_0e_0_usa where name matches the argument.
-"""
+"""List all states from the datable hbtn_0e_0_usa."""
 import MySQLdb
 import sys
 
 
 if __name__ == "__main__":
-    username, password, db_name, state_name_searched = (
-        sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4]
-        )
+    username, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
     db = MySQLdb.connect(
         host="localhost",
         port=3306,
@@ -19,8 +15,8 @@ if __name__ == "__main__":
     )
     cursor = db.cursor()
     cursor.execute(
-        "SELECT * FROM states WHERE BINARY name = '{}' ORDER BY id ASC"
-        .format(state_name_searched)
+        "SELECT cities.id, cities.name, states.name FROM cities "
+        "INNER JOIN states ON cities.state_id = states.id;"
         )
 
     for row in cursor.fetchall():
