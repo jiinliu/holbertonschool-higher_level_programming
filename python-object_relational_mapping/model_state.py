@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Defines the State class and Base instance for
+SQLAlchemy ORM mapping to the states table.
+"""
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
 
