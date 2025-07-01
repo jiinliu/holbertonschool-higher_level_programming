@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Lists all State objects that containing the latter a fronm the databasee hbtn_0e_6_usa
+Lists all State objects that containing
+the latter a fronm the databasee hbtn_0e_6_usa
 """
 
 from sqlalchemy import create_engine
@@ -18,7 +19,7 @@ if __name__ == "__main__":
     )
     Session = sessionmaker(bind=engine)
     session = Session()
-    
+
     states_with_a = session.query(State).filter(
         State.name.like('%a%')).order_by(State.id)
 
