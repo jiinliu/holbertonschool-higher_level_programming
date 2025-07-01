@@ -20,7 +20,9 @@ if __name__ == "__main__":
     session = Session()
 
     state_name_searched = sys.argv[4]
-    state = session.query(State).filter(State.name == state_name_searched).first()
+    state = session.query(State).filter(
+        State.name == state_name_searched
+        ).first()
 
     if state:
         print(f"{state.id}")
