@@ -16,15 +16,12 @@ def load_csv_products():
         reader = csv.DictReader(f)
         return [ { "id": int(row["id"]), "name": row["name"], "category": row["category"], "price": float(row["price"]) } for row in reader ]
 
-def load_sql_products(product_id=None):
+def load_sql_products():
     conn = None
     try:
         conn = sqlite3.connect('products.db')
         cursor = conn.cursor()
-        if product_id:
-            cursor.execute('SELECT id, name, category, price FROM Products WHERE id=?', (product_id,))
-        else:
-            cursor.execute('SELECT id, name, category, price FROM Products')
+        cursor.execute('SELECT id, name, category, price FROM Products')
         rows = cursor.fetchall()
         products = []
         for row in rows:
