@@ -16,11 +16,13 @@ def about():
 def contact():
     return render_template('contact.html')
 
-with open('items.json', 'r') as f:
-    json_data = json.load(f)
+
     
 @app.route('/items')
 def items():
+    with open('items.json', 'r') as f:
+        json_data = json.load(f)
+    
     return render_template('items.html', items=json_data['items'])
 
 if __name__ == '__main__':
