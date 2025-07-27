@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Product Display</title>
+</head>
+<body>
+    {% include 'header.html' %}
+
+    {% if error %}
+        <p>{{ error }}</p>
+    {% elif products %}
+        <table>
+            <tr><th>Name</th><th>Category</th><th>Price</th></tr>
+            {% for p in products %}
+            <tr>
+                <td>{{ p.name if p.name is defined else p['name'] }}</td>
+                <td>{{ p.category if p.category is defined else p['category'] }}</td>
+                <td>{{ "%.2f"|format(p.price if p.price is defined else p['price']) }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% else %}
+        <p>No products available.</p>
+    {% endif %}
+
+    {% include 'footer.html' %}
+</body>
+</html>
+
+
